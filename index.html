@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whodini - Digital Identity</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="person.css">
+    <link rel="stylesheet" href="business.css">
+    <link rel="stylesheet" href="community.css">
+    <link rel="stylesheet" href="event.css">
+    <link rel="stylesheet" href="agency.css">
+    <link rel="stylesheet" href="loader.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header-brand">
+            <h1>Whodini</h1>
+            <p>Your Digital Identity Platform</p>
+        </div>
+        <nav class="header-nav">
+            <a href="#" class="header-nav-link header-signin-btn">Sign in</a>
+        </nav>
+    </div>
+
+    <section class="hero-lead">
+        <p class="hero-lead-text">Choose how you want to connect</p>
+        <p class="hero-lead-sub hero-lead-sub--desktop">Hover over the cards to explore — pick the experience that fits you.</p>
+        <p class="hero-lead-sub hero-lead-sub--mobile">Swipe or scroll the cards to explore — pick the experience that fits you.</p>
+    </section>
+
+    <div class="stage">
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="icon-container">
+                    <div class="bubble b1"></div>
+                    <div class="bubble b2"></div>
+                    <div class="bubble b3"></div>
+
+                    <div class="glass-person">
+                        <div class="head"></div>
+                        <div class="torso"></div>
+                    </div>
+                </div>
+                <h3>Personal</h3>
+                <p>Manage your notification preferences</p>
+                <button class="btn">Get Started</button>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <div class="bubble b1"></div>
+                    <div class="bubble b2"></div>
+                    <div class="bubble b3"></div>
+
+                    <div class="glass-card">
+                        <div class="bar bar-1"></div>
+                        <div class="bar bar-2"></div>
+                        <div class="bar bar-3"></div>
+                        <div class="bar bar-4"></div>
+                    </div>
+                </div>
+                <h3>Business</h3>
+                <p>Send promotional alerts to subscribers</p>
+                <button class="btn">Get Started</button>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="community-icon-wrapper">
+                    <div class="bubble b1"></div>
+                    <div class="bubble b2"></div>
+
+                    <div class="glass-group">
+                        <div class="member m1"></div>
+                        <div class="member m2"></div>
+                        <div class="member m3"></div>
+                    </div>
+                </div>
+                <h3>Community</h3>
+                <p>Communicate with your members</p>
+                <button class="btn">Get Started</button>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="event-icon-wrapper">
+                    <div class="bubble b1"></div>
+                    <div class="bubble b3"></div>
+
+                    <div class="glass-ticket">
+                        <div class="ticket-content">
+                            <div class="ticket-line"></div>
+                            <div class="ticket-line short"></div>
+                        </div>
+                        <div class="ticket-notch"></div>
+                    </div>
+                </div>
+                <h3>Event</h3>
+                <p>Organize vendors and attendees</p>
+                <button class="btn">Get Started</button>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="agency-icon-wrapper">
+                    <div class="bubble b1"></div>
+                    <div class="bubble b2"></div>
+
+                    <div class="glass-globe">
+                        <div class="orbit"></div>
+                        <div class="node n1"></div>
+                        <div class="node n2"></div>
+                        <div class="center-core"></div>
+                    </div>
+                </div>
+                <h3>Agency</h3>
+                <p>Manage campaigns for multi-clients</p>
+                <button class="btn">Get Started</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="value-section">
+        <h2 class="value-heading">One identity, every channel</h2>
+        <p class="value-text">Control your notifications, discover events, and stay in touch with brands and communities — all in one place.</p>
+        <ul class="value-list">
+            <li>You choose what you receive</li>
+            <li>Events and brands in one feed</li>
+            <li>Secure and private by design</li>
+        </ul>
+    </section>
+
+    <div class="footer-section">
+        <div class="button-group">
+            <button class="btn-secondary">Browse Events</button>
+            <button class="btn-secondary">Browse Brands</button>
+        </div>
+    </div>
+
+    <div id="loader" class="loader-wrapper">
+        <div class="whodini-logo-loader">
+            <div class="ring ring-left"></div>
+            <div class="ring ring-right"></div>
+        </div>
+        <div class="loader-text">Loading Whodini</div>
+    </div>
+
+    <script>
+        (function () {
+            var loader = document.getElementById("loader");
+
+            function hideLoader() {
+                if (loader && !loader.classList.contains("loader-hidden")) {
+                    loader.classList.add("loader-hidden");
+                }
+            }
+
+            // Hide loader when the page has actually finished loading (DOM + all resources)
+            if (document.readyState === "complete") {
+                hideLoader();
+            } else {
+                window.addEventListener("load", hideLoader);
+            }
+
+            // Fallback: if load never fires (e.g. stuck resource), hide after 10s
+            setTimeout(hideLoader, 10000);
+        })();
+    </script>
+</body>
+
+</html>

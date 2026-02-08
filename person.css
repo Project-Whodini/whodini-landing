@@ -1,0 +1,128 @@
+:root {
+  /* Background color from your reference */
+  --bg-color: #f28a99;
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glow: rgba(255, 255, 255, 0.6);
+}
+/* The Container with floating animation */
+.icon-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: floatPerson 4s ease-in-out infinite;
+}
+
+/* The Glass Body */
+.glass-person {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+
+  /* Layered shadows for the 3D fluid effect */
+  box-shadow:
+    inset 0 10px 20px var(--glow),
+    inset 0 -5px 15px rgba(0, 0, 0, 0.1),
+    0 20px 40px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Profile Head */
+.head {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  margin-bottom: 8px;
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 4px 8px var(--glow);
+}
+
+/* Profile Body/Shoulders */
+.torso {
+  width: 70px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 40px 40px 10px 10px;
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 4px 10px var(--glow);
+}
+
+/* Background Bubbles */
+.bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  z-index: -1;
+  animation: pulsePerson 3s ease-in-out infinite;
+}
+
+.b1 {
+  width: 30px;
+  height: 30px;
+  top: -20px;
+  left: -10px;
+  animation-delay: 0s;
+}
+.b2 {
+  width: 15px;
+  height: 15px;
+  bottom: 20px;
+  right: -20px;
+  animation-delay: 1s;
+}
+.b3 {
+  width: 10px;
+  height: 10px;
+  top: 40px;
+  right: -30px;
+  animation-delay: 0.5s;
+}
+
+/* Animations */
+@keyframes floatPerson {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+@keyframes pulsePerson {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+}
+
+/* Shine Reflection Effect */
+.glass-person::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 30%;
+  height: 20%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}

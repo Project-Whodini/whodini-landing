@@ -1,0 +1,116 @@
+/* agency.css */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --node-color: rgba(255, 255, 255, 0.5);
+}
+
+.agency-icon-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: floatAgency 6s ease-in-out infinite;
+}
+
+.glass-globe {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+/* The Central Core */
+.center-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 50%;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* The Orbiting Ring */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 30px;
+  border: 1.5px solid var(--glass-border);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(70deg);
+  animation: rotateOrbit 4s linear infinite;
+}
+
+/* Network Nodes */
+.node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--node-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.n1 {
+  top: 10px;
+  right: 10px;
+  animation: pulseAgency 3s infinite;
+}
+.n2 {
+  bottom: 10px;
+  left: 10px;
+  animation: pulseAgency 3s infinite 1.5s;
+}
+
+/* Animations */
+@keyframes rotateOrbit {
+  from {
+    transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg);
+  }
+}
+
+@keyframes floatAgency {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulseAgency {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+/* Hover Interaction */
+.card-wrapper:hover .center-core {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ff4d6d;
+}
+
+.card-wrapper:hover .node {
+  background: #ff4d6d;
+  transform: scale(1.3);
+}

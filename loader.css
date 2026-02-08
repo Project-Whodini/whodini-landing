@@ -1,0 +1,102 @@
+/* loader.css */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at top left, #ff8e8e, #d83a5a, #4a0e2a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Above everything */
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s;
+}
+
+/* Interlocking Rings Logo */
+.whodini-logo-loader {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 8px solid rgba(255, 255, 255, 0.2);
+  border-top: 8px solid white; /* Spinner effect */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+.ring-left {
+  left: 0;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.ring-right {
+  right: 0;
+  animation-direction: reverse;
+  border-top-color: var(--primary-pink);
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: white;
+  animation: pulseText 1.5s ease-in-out infinite;
+}
+
+/* Hide state */
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseText {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive: smaller loader on small screens */
+@media (max-width: 480px) {
+  .whodini-logo-loader {
+    width: 80px;
+    height: 48px;
+  }
+  .ring {
+    width: 40px;
+    height: 40px;
+    border-width: 6px;
+    border-top-width: 6px;
+  }
+  .loader-text {
+    font-size: 0.75rem;
+    margin-top: 16px;
+    letter-spacing: 1px;
+  }
+}

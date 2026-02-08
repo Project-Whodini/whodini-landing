@@ -1,0 +1,138 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glow: rgba(255, 255, 255, 0.2);
+  --bar-color: linear-gradient(to top, #ff4d6d, #ff8e8e);
+}
+
+.icon-wrapper {
+  position: relative;
+  width: 180px;
+  height: 140px;
+  animation: floatBusiness 5s ease-in-out infinite;
+}
+/* The Glass Tablet/Container */
+.glass-card {
+  width: 100%;
+  height: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 24px;
+  border: 1.5px solid var(--glass-border);
+  box-shadow:
+    inset 0 8px 15px var(--glow),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.05),
+    0 25px 50px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 25px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glass Chart Bars */
+.bar {
+  width: 20px;
+  background: var(--bar-color);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  box-shadow: inset 0 4px 10px var(--glow);
+  transform-origin: bottom;
+  animation: grow 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.bar-1 {
+  height: 40%;
+  animation-delay: 0.2s;
+}
+.bar-2 {
+  height: 65%;
+  animation-delay: 0.4s;
+}
+.bar-3 {
+  height: 55%;
+  animation-delay: 0.6s;
+}
+.bar-4 {
+  height: 90%;
+  animation-delay: 0.8s;
+}
+
+/* Floating Bubbles from reference */
+.bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+.b1 {
+  width: 40px;
+  height: 40px;
+  top: -30px;
+  right: -10px;
+  animation: pulseBusiness 4s infinite;
+}
+.b2 {
+  width: 25px;
+  height: 25px;
+  bottom: -10px;
+  left: -20px;
+  animation: pulseBusiness 3s infinite 1s;
+}
+.b3 {
+  width: 15px;
+  height: 15px;
+  top: 20px;
+  left: -40px;
+}
+
+/* Shine Reflection */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10%;
+  width: 80%;
+  height: 15%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+  border-radius: 20px;
+}
+
+@keyframes floatBusiness {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseBusiness {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+}

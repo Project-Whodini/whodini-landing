@@ -1,0 +1,75 @@
+/* community.css */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --member-color: rgba(255, 255, 255, 0.2);
+}
+
+.community-icon-wrapper {
+  position: relative;
+  width: 150px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: floatCommunity 6s ease-in-out infinite;
+}
+
+.glass-group {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.member {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--member-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Positioning the trio */
+.m1 {
+  top: 0;
+  left: 25px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.3);
+}
+.m2 {
+  bottom: 10px;
+  left: 0;
+  z-index: 1;
+}
+.m3 {
+  bottom: 10px;
+  right: 0;
+  z-index: 1;
+}
+
+/* Animation: Members pull closer on hover */
+.card-wrapper:hover .m1 {
+  transform: scale(1.1) translateY(-5px);
+}
+.card-wrapper:hover .m2 {
+  transform: translateX(10px);
+}
+.card-wrapper:hover .m3 {
+  transform: translateX(-10px);
+}
+
+/* Reusing your bubble animations */
+@keyframes floatCommunity {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
