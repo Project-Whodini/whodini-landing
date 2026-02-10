@@ -5,7 +5,9 @@
   --glass-white: rgba(255, 255, 255, 0.15);
   --solid-white: rgba(255, 255, 255, 1);
 }
-
+a {
+  text-decoration: none;
+}
 body {
   background: radial-gradient(circle at top left, #ff8e8e, #d83a5a, #4a0e2a);
   min-height: 100vh;
@@ -58,7 +60,9 @@ body {
   font-size: 1rem;
   text-decoration: none;
   opacity: 0.95;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .header-nav-link:hover {
@@ -77,7 +81,11 @@ body {
   text-decoration: none;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .header-signin-btn:hover {
@@ -232,7 +240,9 @@ body {
 .card-wrapper:not(:first-child) [class*="icon-"] {
   opacity: 0;
   transform: translateY(15px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 /* --- FAN STATE (Default) --- */
@@ -368,7 +378,10 @@ body {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   backdrop-filter: blur(5px);
 }
 
