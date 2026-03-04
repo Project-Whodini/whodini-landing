@@ -446,7 +446,7 @@ body {
   }
 }
 
-/* Tablet + mobile: horizontal scroll card row (no hover fan) */
+/* Tablet + mobile: hide stage, show carousel */
 @media (max-width: 1023px) {
   body {
     padding-bottom: 20px;
@@ -509,91 +509,13 @@ body {
     font-size: 0.95rem;
   }
 
-  /* Stage: horizontal scroll row */
+  /* Hide the desktop stage */
   .stage {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 340px;
-    justify-content: flex-start;
-    align-items: center;
-    overflow-x: auto;
-    overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 24px;
-    padding: 12px 24px 16px;
-    gap: 0;
-  }
-  .stage::-webkit-scrollbar {
-    height: 6px;
-  }
-  .stage::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-  }
-  .stage::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
-  }
-  .card-wrapper {
-    position: relative;
-    width: 200px;
-    height: 340px;
-    flex-shrink: 0;
-    margin: 0 14px;
-    scroll-snap-align: center;
-    transform: none !important;
-  }
-  .card-wrapper:first-child {
-    margin-left: 0;
-  }
-  .card-wrapper:last-child {
-    margin-right: 0;
-  }
-  .card-wrapper:nth-child(1),
-  .card-wrapper:nth-child(2),
-  .card-wrapper:nth-child(3),
-  .card-wrapper:nth-child(4),
-  .card-wrapper:nth-child(5) {
-    transform: none !important;
-  }
-  .stage:hover .card-wrapper:nth-child(1),
-  .stage:hover .card-wrapper:nth-child(2),
-  .stage:hover .card-wrapper:nth-child(3),
-  .stage:hover .card-wrapper:nth-child(4),
-  .stage:hover .card-wrapper:nth-child(5) {
-    transform: none !important;
-  }
-  .card-wrapper:not(:first-child) h3,
-  .card-wrapper:not(:first-child) p,
-  .card-wrapper:not(:first-child) .btn,
-  .card-wrapper:not(:first-child) [class*="icon-"] {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .stage:hover h3,
-  .stage:hover p,
-  .stage:hover .btn,
-  .stage:hover [class*="icon-"] {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .card-wrapper:hover .card {
-    transform: translateY(-8px) scale(1.02);
-  }
-  .card {
-    padding: 18px 16px;
-  }
-  .card h3 {
-    font-size: 1.1rem;
-  }
-  .card p {
-    font-size: 0.85rem;
+    display: none;
   }
 }
 
-/* Mobile: smaller cards, more spacing */
+/* Mobile: smaller text */
 @media (max-width: 767px) {
   .header-brand h1 {
     font-size: 1.85rem;
@@ -606,32 +528,6 @@ body {
   }
   .hero-lead-sub {
     font-size: 0.85rem;
-  }
-  .stage {
-    min-height: 300px;
-    padding: 10px 24px 14px;
-    scroll-padding: 24px;
-  }
-  .card-wrapper {
-    width: 180px;
-    height: 280px;
-    margin: 0 16px;
-  }
-  .card-wrapper:first-child {
-    margin-left: 0;
-  }
-  .card-wrapper:last-child {
-    margin-right: 0;
-  }
-  .card {
-    padding: 14px 12px;
-    border-radius: 20px;
-  }
-  .card h3 {
-    font-size: 1rem;
-  }
-  .card p {
-    font-size: 0.8rem;
   }
   .btn {
     padding: 9px 10px;
@@ -654,137 +550,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-  }
-
-  /* Smaller card icons on mobile */
-  .card .icon-container {
-    width: 100px;
-    height: 100px;
-  }
-  .card .icon-container .bubble.b1 {
-    width: 20px;
-    height: 20px;
-    top: -14px;
-    left: -6px;
-  }
-  .card .icon-container .bubble.b2 {
-    width: 10px;
-    height: 10px;
-    bottom: 14px;
-    right: -14px;
-  }
-  .card .icon-container .bubble.b3 {
-    width: 7px;
-    height: 7px;
-    top: 26px;
-    right: -20px;
-  }
-  .card .icon-container .head {
-    width: 26px;
-    height: 26px;
-    margin-bottom: 5px;
-  }
-  .card .icon-container .torso {
-    width: 46px;
-    height: 26px;
-    border-radius: 26px 26px 6px 6px;
-  }
-  .card .icon-wrapper {
-    width: 120px;
-    height: 94px;
-  }
-  .card .icon-wrapper .bubble.b1 {
-    width: 26px;
-    height: 26px;
-    top: -20px;
-    right: -6px;
-  }
-  .card .icon-wrapper .bubble.b2 {
-    width: 16px;
-    height: 16px;
-    bottom: -6px;
-    left: -14px;
-  }
-  .card .icon-wrapper .bubble.b3 {
-    width: 10px;
-    height: 10px;
-    top: 14px;
-    left: -26px;
-  }
-  .card .icon-wrapper .glass-card {
-    padding: 16px;
-  }
-  .card .icon-wrapper .bar {
-    width: 14px;
-    border-radius: 4px;
-  }
-  .card .community-icon-wrapper {
-    width: 100px;
-    height: 80px;
-  }
-  .card .community-icon-wrapper .bubble {
-    width: 18px;
-    height: 18px;
-  }
-  .card .community-icon-wrapper .glass-group {
-    width: 66px;
-    height: 66px;
-  }
-  .card .community-icon-wrapper .member {
-    width: 33px;
-    height: 33px;
-  }
-  .card .community-icon-wrapper .m1 {
-    left: 16px;
-  }
-  .card .community-icon-wrapper .m2,
-  .card .community-icon-wrapper .m3 {
-    bottom: 6px;
-  }
-  .card .event-icon-wrapper {
-    width: 106px;
-    height: 66px;
-  }
-  .card .event-icon-wrapper .glass-ticket {
-    width: 86px;
-    height: 52px;
-    padding: 10px;
-  }
-  .card .event-icon-wrapper .ticket-notch {
-    width: 14px;
-    height: 14px;
-    right: -7px;
-  }
-  .card .event-icon-wrapper .ticket-line {
-    height: 3px;
-  }
-  .card .agency-icon-wrapper {
-    width: 100px;
-    height: 100px;
-  }
-  .card .agency-icon-wrapper .glass-globe {
-    width: 53px;
-    height: 53px;
-  }
-  .card .agency-icon-wrapper .center-core {
-    width: 33px;
-    height: 33px;
-  }
-  .card .agency-icon-wrapper .orbit {
-    width: 60px;
-    height: 20px;
-  }
-  .card .agency-icon-wrapper .node {
-    width: 8px;
-    height: 8px;
-  }
-  .card .agency-icon-wrapper .n1 {
-    top: 6px;
-    right: 6px;
-  }
-  .card .agency-icon-wrapper .n2 {
-    bottom: 6px;
-    left: 6px;
   }
 }
 
@@ -812,22 +577,6 @@ body {
   }
   .hero-lead-sub {
     font-size: 0.8rem;
-  }
-  .stage {
-    min-height: 280px;
-    padding: 8px 20px 12px;
-    scroll-padding: 20px;
-  }
-  .card-wrapper {
-    width: 160px;
-    height: 260px;
-    margin: 0 18px;
-  }
-  .card-wrapper:first-child {
-    margin-left: 0;
-  }
-  .card-wrapper:last-child {
-    margin-right: 0;
   }
   .card {
     padding: 12px 10px;
@@ -860,94 +609,6 @@ body {
   .btn-secondary {
     width: 100%;
   }
-
-  /* Even smaller icons on small phones */
-  .card .icon-container {
-    width: 86px;
-    height: 86px;
-  }
-  .card .icon-container .head {
-    width: 22px;
-    height: 22px;
-    margin-bottom: 4px;
-  }
-  .card .icon-container .torso {
-    width: 38px;
-    height: 22px;
-    border-radius: 22px 22px 5px 5px;
-  }
-  .card .icon-wrapper {
-    width: 100px;
-    height: 78px;
-  }
-  .card .icon-wrapper .glass-card {
-    padding: 12px;
-  }
-  .card .icon-wrapper .bar {
-    width: 12px;
-    border-radius: 3px;
-  }
-  .card .community-icon-wrapper {
-    width: 84px;
-    height: 68px;
-  }
-  .card .community-icon-wrapper .glass-group {
-    width: 56px;
-    height: 56px;
-  }
-  .card .community-icon-wrapper .member {
-    width: 28px;
-    height: 28px;
-  }
-  .card .community-icon-wrapper .m1 {
-    left: 14px;
-  }
-  .card .community-icon-wrapper .m2,
-  .card .community-icon-wrapper .m3 {
-    bottom: 4px;
-  }
-  .card .event-icon-wrapper {
-    width: 88px;
-    height: 56px;
-  }
-  .card .event-icon-wrapper .glass-ticket {
-    width: 72px;
-    height: 44px;
-    padding: 8px;
-  }
-  .card .event-icon-wrapper .ticket-notch {
-    width: 12px;
-    height: 12px;
-    right: -6px;
-  }
-  .card .agency-icon-wrapper {
-    width: 84px;
-    height: 84px;
-  }
-  .card .agency-icon-wrapper .glass-globe {
-    width: 44px;
-    height: 44px;
-  }
-  .card .agency-icon-wrapper .center-core {
-    width: 28px;
-    height: 28px;
-  }
-  .card .agency-icon-wrapper .orbit {
-    width: 50px;
-    height: 16px;
-  }
-  .card .agency-icon-wrapper .node {
-    width: 6px;
-    height: 6px;
-  }
-  .card .agency-icon-wrapper .n1 {
-    top: 4px;
-    right: 4px;
-  }
-  .card .agency-icon-wrapper .n2 {
-    bottom: 4px;
-    left: 4px;
-  }
 }
 
 /* Very small (e.g. 320px) */
@@ -965,86 +626,183 @@ body {
   .hero-lead {
     margin-bottom: 6px;
   }
-  .stage {
-    min-height: 260px;
-    padding: 8px 16px 12px;
-    scroll-padding: 16px;
+}
+
+/* ========== MOBILE CAROUSEL ========== */
+
+.mobile-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0 0 12px;
+  z-index: 10;
+}
+
+/* Show on tablet + mobile, hide on desktop */
+@media (max-width: 1023px) {
+  .mobile-carousel {
+    display: block;
   }
-  .card-wrapper {
-    width: 140px;
-    height: 240px;
-    margin: 0 14px;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  box-sizing: border-box;
+}
+
+.carousel-slide .card {
+  width: 220px;
+  height: 350px;
+  background: var(--glass-white);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.carousel-slide.active .card {
+  animation: carouselFadeIn 0.4s ease forwards;
+}
+
+@keyframes carouselFadeIn {
+  from {
+    opacity: 0.6;
+    transform: scale(0.95);
   }
-  .card-wrapper:first-child {
-    margin-left: 0;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  .card-wrapper:last-child {
-    margin-right: 0;
+}
+
+/* Carousel nav buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  padding: 0;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.32);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transform: translateY(-60%) scale(1.08);
+}
+
+.carousel-btn:active {
+  transform: translateY(-60%) scale(0.95);
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
+}
+
+/* Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+  display: inline-block;
+}
+
+.carousel-dot.active {
+  background: rgba(255, 255, 255, 0.95);
+  transform: scale(1.35);
+}
+
+/* Responsive card sizes inside carousel */
+@media (max-width: 479px) {
+  .mobile-carousel {
+    max-width: 340px;
   }
-  /* Smallest icons */
-  .card .icon-container {
-    width: 72px;
-    height: 72px;
+  .carousel-slide .card {
+    width: 200px;
+    height: 320px;
+    padding: 20px 16px;
+    border-radius: 22px;
   }
-  .card .icon-container .head {
-    width: 18px;
-    height: 18px;
-    margin-bottom: 3px;
+  .carousel-btn {
+    width: 34px;
+    height: 34px;
   }
-  .card .icon-container .torso {
-    width: 32px;
-    height: 18px;
-    border-radius: 18px 18px 4px 4px;
+}
+
+@media (max-width: 359px) {
+  .mobile-carousel {
+    max-width: 300px;
   }
-  .card .icon-wrapper {
-    width: 84px;
-    height: 64px;
+  .carousel-slide .card {
+    width: 180px;
+    height: 290px;
+    padding: 16px 12px;
+    border-radius: 18px;
   }
-  .card .icon-wrapper .glass-card {
-    padding: 10px;
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
   }
-  .card .icon-wrapper .bar {
-    width: 10px;
-  }
-  .card .community-icon-wrapper {
-    width: 70px;
-    height: 56px;
-  }
-  .card .community-icon-wrapper .glass-group {
-    width: 46px;
-    height: 46px;
-  }
-  .card .community-icon-wrapper .member {
-    width: 24px;
-    height: 24px;
-  }
-  .card .event-icon-wrapper {
-    width: 72px;
-    height: 46px;
-  }
-  .card .event-icon-wrapper .glass-ticket {
-    width: 60px;
-    height: 38px;
-    padding: 6px;
-  }
-  .card .agency-icon-wrapper {
-    width: 70px;
-    height: 70px;
-  }
-  .card .agency-icon-wrapper .glass-globe {
-    width: 38px;
-    height: 38px;
-  }
-  .card .agency-icon-wrapper .center-core {
-    width: 24px;
-    height: 24px;
-  }
-  .card .agency-icon-wrapper .orbit {
-    width: 42px;
-    height: 14px;
-  }
-  .card .agency-icon-wrapper .node {
-    width: 5px;
-    height: 5px;
+  .carousel-btn svg {
+    width: 16px;
+    height: 16px;
   }
 }
