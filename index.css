@@ -638,6 +638,7 @@ body {
   margin: 0 auto;
   padding: 0 0 12px;
   z-index: 10;
+  overflow: hidden;
 }
 
 /* Show on tablet + mobile, hide on desktop */
