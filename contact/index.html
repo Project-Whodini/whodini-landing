@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Whodini</title>
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <div class="header">
+      <div class="header-brand">
+        <a href="../index.html" style="text-decoration: none; color: inherit">
+          <h1>Whodini</h1>
+          <p>Your Digital Identity Platform</p>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="../index.html" class="header-nav-link">Home</a>
+        <a href="../about/index.html" class="header-nav-link">About</a>
+        <a
+          href="https://project-whodini.github.io/whodini-fe/"
+          class="header-nav-link header-signin-btn"
+          >Sign in</a
+        >
+      </nav>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="contact-hero">
+      <div class="contact-hero-badge">Contact Us</div>
+      <h2 class="contact-hero-title">We'd love to<br />hear from you</h2>
+      <p class="contact-hero-sub">
+        Have a question, a partnership idea, or just want to say hello? Drop us
+        a message and we'll get back to you within one business day.
+      </p>
+    </section>
+
+    <!-- ===== MAIN GRID (form + info) ===== -->
+    <section class="contact-main">
+      <!-- LEFT: Contact Form -->
+      <div class="contact-form-card">
+        <h3 class="form-title">Send us a message</h3>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="firstName">First name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Jane"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Doe"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="jane@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <div class="select-wrapper">
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Choose a topic…</option>
+                <option value="general">General enquiry</option>
+                <option value="support">Technical support</option>
+                <option value="partnership">Partnership / Business</option>
+                <option value="press">Press &amp; Media</option>
+                <option value="feedback">Product feedback</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="select-arrow">&#8964;</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell us what's on your mind…"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn submit-btn">Send message</button>
+
+          <div class="form-success" id="formSuccess" aria-live="polite">
+            <span class="success-icon">✓</span>
+            <span>Message sent! We'll be in touch soon.</span>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: Info Cards + Social -->
+      <div class="contact-info-col">
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h4>Email us</h4>
+            <p>For general enquiries and support</p>
+            <a href="mailto:hello@whodini.com" class="info-link"
+              >hello@whodini.com</a
+            >
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">💼</div>
+          <div>
+            <h4>Business &amp; Partnerships</h4>
+            <p>Interested in working together?</p>
+            <a href="mailto:partnerships@whodini.com" class="info-link"
+              >partnerships@whodini.com</a
+            >
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📰</div>
+          <div>
+            <h4>Press &amp; Media</h4>
+            <p>Press kits and media resources</p>
+            <a href="mailto:press@whodini.com" class="info-link"
+              >press@whodini.com</a
+            >
+          </div>
+        </div>
+
+        <div class="info-card social-card">
+          <div class="info-icon">🌐</div>
+          <div>
+            <h4>Find us online</h4>
+            <p>Follow Whodini for updates</p>
+            <div class="social-links">
+              <a href="#" class="social-pill">Twitter / X</a>
+              <a href="#" class="social-pill">LinkedIn</a>
+              <a href="#" class="social-pill">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section">
+      <h2 class="section-heading">Frequently asked questions</h2>
+      <p class="section-sub">Quick answers to the things people ask most.</p>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>What is Whodini?</span>
+            <span class="faq-chevron"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" /></svg
+            ></span>
+          </summary>
+          <div class="faq-answer">
+            Whodini is a digital identity platform that lets individuals,
+            businesses, communities, events, and agencies take control of how
+            they communicate and connect. You decide what you receive, from
+            whom, and through which channel.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Is Whodini free to use?</span>
+            <span class="faq-chevron"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" /></svg
+            ></span>
+          </summary>
+          <div class="faq-answer">
+            Personal accounts are free. Business, Community, Event, and Agency
+            accounts have plans designed to match their scale — reach out to us
+            or sign up to explore the options.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>How long does it take to hear back from support?</span>
+            <span class="faq-chevron"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" /></svg
+            ></span>
+          </summary>
+          <div class="faq-answer">
+            We aim to respond to all enquiries within one business day. For
+            urgent technical issues, please include "URGENT" in your message
+            subject so our team can prioritise accordingly.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>How does Whodini protect my privacy?</span>
+            <span class="faq-chevron"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" /></svg
+            ></span>
+          </summary>
+          <div class="faq-answer">
+            Privacy is at the core of everything we build. Your data is never
+            sold to third parties. You have full control over who can contact
+            you and you can revoke access at any time.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Can I switch account types later?</span>
+            <span class="faq-chevron"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" /></svg
+            ></span>
+          </summary>
+          <div class="faq-answer">
+            Yes — you can upgrade or change your account type at any time from
+            your profile settings. Your existing connections and preferences are
+            preserved during the transition.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <p class="footer-brand">Whodini</p>
+      <p class="footer-tagline">Your Digital Identity Platform</p>
+      <nav class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../about/index.html">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="https://project-whodini.github.io/whodini-fe/">Sign in</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Whodini. All rights reserved.</p>
+    </footer>
+
+    <script>
+      /* ---- Contact form ---- */
+      const form = document.getElementById("contactForm");
+      const success = document.getElementById("formSuccess");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          const btn = form.querySelector(".submit-btn");
+          btn.textContent = "Sending…";
+          btn.disabled = true;
+          setTimeout(function () {
+            form.reset();
+            btn.style.display = "none";
+            success.classList.add("visible");
+          }, 1200);
+        });
+      }
+
+      /* ---- Smooth FAQ accordion ---- */
+      document.querySelectorAll(".faq-item").forEach(function (details) {
+        var summary = details.querySelector(".faq-question");
+        var answer = details.querySelector(".faq-answer");
+
+        /* Wrap raw text/content in an inner div for reliable scrollHeight */
+        var inner = details.querySelector(".faq-answer-inner");
+        if (!inner) {
+          inner = document.createElement("div");
+          inner.className = "faq-answer-inner";
+          while (answer.firstChild) inner.appendChild(answer.firstChild);
+          answer.appendChild(inner);
+        }
+
+        summary.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          var isOpen = details.hasAttribute("open");
+
+          if (!isOpen) {
+            /* OPEN: add attribute so content is in DOM, then animate 0 → full height */
+            details.setAttribute("open", "");
+            var target =
+              inner.offsetHeight + 14 + 18; /* top + bottom padding */
+            answer.style.height = "0px";
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                answer.style.height = target + "px";
+              });
+            });
+            answer.addEventListener("transitionend", function onOpen() {
+              answer.style.height = "auto";
+              answer.removeEventListener("transitionend", onOpen);
+            });
+          } else {
+            /* CLOSE: lock current height, then animate to 0 */
+            answer.style.height = answer.scrollHeight + "px";
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                answer.style.height = "0px";
+              });
+            });
+            answer.addEventListener("transitionend", function onClose() {
+              details.removeAttribute("open");
+              answer.removeEventListener("transitionend", onClose);
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

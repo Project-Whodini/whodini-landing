@@ -1,0 +1,539 @@
+/* ================================================
+   contact.css  —  Whodini Contact Page
+   Relies on ../index.css for base tokens & header
+   ================================================ */
+
+body {
+  justify-content: flex-start;
+  padding-top: 12px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+/* ---- Shared typography (mirrors about.css) ---- */
+.section-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.section-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  opacity: 0.88;
+  max-width: 620px;
+  margin: 0 auto 40px;
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* ================================================
+   HERO
+   ================================================ */
+.contact-hero {
+  width: 100%;
+  max-width: 780px;
+  text-align: center;
+  padding: 0 24px;
+  margin-top: 28px;
+  z-index: 10;
+  animation: fadeIn 0.9s ease backwards;
+}
+
+.contact-hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.contact-hero-title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.contact-hero-sub {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.88;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ================================================
+   MAIN GRID
+   ================================================ */
+.contact-main {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 24px;
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+  align-items: start;
+  z-index: 10;
+}
+
+/* ================================================
+   CONTACT FORM CARD
+   ================================================ */
+.contact-form-card {
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 28px;
+  padding: 40px 36px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.form-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 28px;
+  letter-spacing: -0.02em;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  outline: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  width: 100%;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  background: rgba(255, 255, 255, 0.17);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Custom select wrapper */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select {
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+.select-wrapper select option {
+  background: #6b1a32;
+  color: white;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  opacity: 0.6;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 14px;
+  margin-top: 4px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    opacity 0.3s ease;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success message */
+.form-success {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.form-success.visible {
+  display: flex;
+  animation: fadeIn 0.5s ease;
+}
+
+.success-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================================================
+   INFO CARDS (right column)
+   ================================================ */
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  padding: 24px 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.info-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.info-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.info-card p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  opacity: 0.78;
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.info-link {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.9;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 1px;
+  transition:
+    opacity 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.info-link:hover {
+  opacity: 1;
+  border-color: white;
+}
+
+/* Social pills */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.social-pill {
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.social-pill:hover {
+  background: rgba(255, 255, 255, 0.26);
+  transform: translateY(-2px);
+}
+
+/* ================================================
+   FAQ SECTION
+   ================================================ */
+.faq-section {
+  width: 100%;
+  max-width: 780px;
+  padding: 0 24px;
+  margin-top: 72px;
+  z-index: 10;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.25s ease;
+}
+
+.faq-item[open] {
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  gap: 16px;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question:hover {
+  opacity: 0.9;
+}
+
+.faq-chevron {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  flex-shrink: 0;
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(90deg);
+}
+
+.faq-answer {
+  font-size: 0.93rem;
+  font-weight: 300;
+  opacity: 0.85;
+  line-height: 1.7;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  height: 0;
+  transition: height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer-inner {
+  padding: 14px 22px 18px;
+}
+
+/* ================================================
+   FOOTER (matches about page)
+   ================================================ */
+.site-footer {
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px 24px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 72px;
+}
+
+.footer-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.7;
+  margin: 0 0 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  opacity: 0.55;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+/* ================================================
+   RESPONSIVE
+   ================================================ */
+@media (max-width: 900px) {
+  .contact-main {
+    grid-template-columns: 1fr;
+  }
+  .contact-info-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-hero-title {
+    font-size: 2.4rem;
+  }
+  .contact-form-card {
+    padding: 28px 22px;
+  }
+  .form-row.two {
+    grid-template-columns: 1fr;
+  }
+  .contact-info-col {
+    grid-template-columns: 1fr;
+  }
+  .faq-section {
+    margin-top: 48px;
+  }
+  .section-heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .contact-hero-title {
+    font-size: 2rem;
+  }
+  .contact-hero-sub {
+    font-size: 0.95rem;
+  }
+  .contact-main {
+    padding: 0 16px;
+    margin-top: 36px;
+  }
+  .faq-section {
+    padding: 0 16px;
+  }
+  .faq-question {
+    font-size: 0.92rem;
+    padding: 14px 16px;
+  }
+  .faq-answer-inner {
+    padding: 12px 16px 14px;
+  }
+}

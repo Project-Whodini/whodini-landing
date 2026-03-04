@@ -362,6 +362,13 @@ body {
   animation: fadeIn 1.2s ease forwards;
 }
 
+.a-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
 .button-group {
   display: flex;
   gap: 15px;
