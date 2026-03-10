@@ -3,460 +3,227 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Whodini - Digital Identity</title>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="person.css" />
-    <link rel="stylesheet" href="business.css" />
-    <link rel="stylesheet" href="community.css" />
-    <link rel="stylesheet" href="event.css" />
-    <link rel="stylesheet" href="agency.css" />
-    <link rel="stylesheet" href="loader.css" />
+    <title>Whodini - Coming Soon</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap"
+    />
+    <style>
+      :root {
+        --primary-pink: #ff4d6d;
+        --glass-white: rgba(255, 255, 255, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: radial-gradient(
+          circle at top left,
+          #ff8e8e,
+          #d83a5a,
+          #4a0e2a
+        );
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: "Outfit", sans-serif;
+        color: white;
+        padding: 24px;
+        text-align: center;
+      }
+
+      /* ---- Interlocking rings animation ---- */
+      .logo-rings {
+        position: relative;
+        width: 100px;
+        height: 60px;
+        margin-bottom: 32px;
+      }
+
+      .ring {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 8px solid rgba(255, 255, 255, 0.2);
+        border-top: 8px solid white;
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite;
+      }
+
+      .ring-left {
+        left: 0;
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      .ring-right {
+        right: 0;
+        animation-direction: reverse;
+        border-top-color: var(--primary-pink);
+      }
+
+      /* ---- Content ---- */
+      .brand {
+        font-size: 3rem;
+        font-weight: 600;
+        letter-spacing: -1px;
+        margin-bottom: 6px;
+      }
+
+      .tagline {
+        font-weight: 300;
+        opacity: 0.85;
+        margin-bottom: 48px;
+        font-size: 1.05rem;
+      }
+
+      /* Glass card */
+      .maintenance-card {
+        background: var(--glass-white);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 28px;
+        padding: 48px 36px;
+        max-width: 480px;
+        width: 100%;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .wrench-icon {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+        display: block;
+        animation: wiggle 2s ease-in-out infinite;
+      }
+
+      .maintenance-card h2 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+      }
+
+      .maintenance-card p {
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        margin-bottom: 8px;
+      }
+
+      .maintenance-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .divider {
+        width: 48px;
+        height: 3px;
+        background: var(--primary-pink);
+        border-radius: 3px;
+        margin: 20px auto;
+        opacity: 0.8;
+      }
+
+      .contact-link {
+        color: white;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: opacity 0.2s ease;
+      }
+
+      .contact-link:hover {
+        opacity: 0.8;
+      }
+
+      /* ---- Footer ---- */
+      .footer {
+        margin-top: 40px;
+        font-weight: 300;
+        font-size: 0.85rem;
+        opacity: 0.6;
+      }
+
+      /* ---- Animations ---- */
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(12deg);
+        }
+        75% {
+          transform: rotate(-12deg);
+        }
+      }
+
+      /* ---- Responsive ---- */
+      @media (max-width: 479px) {
+        .brand {
+          font-size: 2.2rem;
+        }
+        .tagline {
+          font-size: 0.9rem;
+          margin-bottom: 32px;
+        }
+        .maintenance-card {
+          padding: 32px 24px;
+          border-radius: 22px;
+        }
+        .maintenance-card h2 {
+          font-size: 1.3rem;
+        }
+        .maintenance-card p {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <div class="header">
-      <div class="header-brand">
-        <h1>Whodini</h1>
-        <p>Your Digital Identity Platform</p>
-      </div>
-      <nav class="header-nav">
-        <a href="about/index.html" class="header-nav-link">About</a>
-        <a href="contact/index.html" class="header-nav-link">Contact</a>
-        <a
-          href="https://project-whodini.github.io/whodini-fe/"
-          class="header-nav-link header-signin-btn"
-          >Sign in</a
-        >
-      </nav>
+    <h1 class="brand">Whodini</h1>
+    <p class="tagline">Your Digital Identity Platform</p>
+
+    <div class="logo-rings">
+      <div class="ring ring-left"></div>
+      <div class="ring ring-right"></div>
     </div>
 
-    <section class="hero-lead">
-      <p class="hero-lead-text">Choose how you want to connect</p>
-      <p class="hero-lead-sub hero-lead-sub--desktop">
-        Hover over the cards to explore — pick the experience that fits you.
+    <div class="maintenance-card">
+      <span class="wrench-icon">�</span>
+      <h2>Coming Soon</h2>
+      <p>
+        Something exciting is on the way. We're building a new experience for
+        you and will be launching shortly.
       </p>
-      <p class="hero-lead-sub hero-lead-sub--mobile">
-        Swipe or scroll the cards to explore — pick the experience that fits
-        you.
-      </p>
-    </section>
-
-    <div class="stage">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="icon-container">
-            <div class="bubble b1"></div>
-            <div class="bubble b2"></div>
-            <div class="bubble b3"></div>
-
-            <div class="glass-person">
-              <div class="head"></div>
-              <div class="torso"></div>
-            </div>
-          </div>
-          <h3>Personal</h3>
-          <p>Manage your notification preferences</p>
-          <a
-            href="https://project-whodini.github.io/whodini-fe/register/"
-            class="btn"
-            >Get Started</a
-          >
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="icon-wrapper">
-            <div class="bubble b1"></div>
-            <div class="bubble b2"></div>
-            <div class="bubble b3"></div>
-
-            <div class="glass-card">
-              <div class="bar bar-1"></div>
-              <div class="bar bar-2"></div>
-              <div class="bar bar-3"></div>
-              <div class="bar bar-4"></div>
-            </div>
-          </div>
-          <h3>Business</h3>
-          <p>Send promotional alerts to subscribers</p>
-          <a
-            href="https://project-whodini.github.io/whodini-fe/register/"
-            class="btn"
-            >Get Started</a
-          >
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="community-icon-wrapper">
-            <div class="bubble b1"></div>
-            <div class="bubble b2"></div>
-
-            <div class="glass-group">
-              <div class="member m1"></div>
-              <div class="member m2"></div>
-              <div class="member m3"></div>
-            </div>
-          </div>
-          <h3>Community</h3>
-          <p>Communicate with your members</p>
-          <a
-            href="https://project-whodini.github.io/whodini-fe/register/"
-            class="btn"
-            >Get Started</a
-          >
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="event-icon-wrapper">
-            <div class="bubble b1"></div>
-            <div class="bubble b3"></div>
-
-            <div class="glass-ticket">
-              <div class="ticket-content">
-                <div class="ticket-line"></div>
-                <div class="ticket-line short"></div>
-              </div>
-              <div class="ticket-notch"></div>
-            </div>
-          </div>
-          <h3>Event</h3>
-          <p>Organize vendors and attendees</p>
-          <a
-            href="https://project-whodini.github.io/whodini-fe/register/"
-            class="btn"
-            >Get Started</a
-          >
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="agency-icon-wrapper">
-            <div class="bubble b1"></div>
-            <div class="bubble b2"></div>
-
-            <div class="glass-globe">
-              <div class="orbit"></div>
-              <div class="node n1"></div>
-              <div class="node n2"></div>
-              <div class="center-core"></div>
-            </div>
-          </div>
-          <h3>Agency</h3>
-          <p>Manage campaigns for multi-clients</p>
-          <a
-            href="https://project-whodini.github.io/whodini-fe/register/"
-            class="btn"
-            >Get Started</a
-          >
-        </div>
-      </div>
+      <div class="divider"></div>
     </div>
 
-    <!-- Mobile/Tablet Carousel (hidden on desktop) -->
-    <div class="mobile-carousel">
-      <div class="carousel-viewport">
-        <div class="carousel-track">
-          <div class="carousel-slide">
-            <div class="card">
-              <div class="icon-container">
-                <div class="bubble b1"></div>
-                <div class="bubble b2"></div>
-                <div class="bubble b3"></div>
-                <div class="glass-person">
-                  <div class="head"></div>
-                  <div class="torso"></div>
-                </div>
-              </div>
-              <h3>Personal</h3>
-              <p>Manage your notification preferences</p>
-              <a
-                href="https://project-whodini.github.io/whodini-fe/register/"
-                class="btn"
-                >Get Started</a
-              >
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <div class="card">
-              <div class="icon-wrapper">
-                <div class="bubble b1"></div>
-                <div class="bubble b2"></div>
-                <div class="bubble b3"></div>
-                <div class="glass-card">
-                  <div class="bar bar-1"></div>
-                  <div class="bar bar-2"></div>
-                  <div class="bar bar-3"></div>
-                  <div class="bar bar-4"></div>
-                </div>
-              </div>
-              <h3>Business</h3>
-              <p>Send promotional alerts to subscribers</p>
-              <a
-                href="https://project-whodini.github.io/whodini-fe/register/"
-                class="btn"
-                >Get Started</a
-              >
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <div class="card">
-              <div class="community-icon-wrapper">
-                <div class="bubble b1"></div>
-                <div class="bubble b2"></div>
-                <div class="glass-group">
-                  <div class="member m1"></div>
-                  <div class="member m2"></div>
-                  <div class="member m3"></div>
-                </div>
-              </div>
-              <h3>Community</h3>
-              <p>Communicate with your members</p>
-              <a
-                href="https://project-whodini.github.io/whodini-fe/register/"
-                class="btn"
-                >Get Started</a
-              >
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <div class="card">
-              <div class="event-icon-wrapper">
-                <div class="bubble b1"></div>
-                <div class="bubble b3"></div>
-                <div class="glass-ticket">
-                  <div class="ticket-content">
-                    <div class="ticket-line"></div>
-                    <div class="ticket-line short"></div>
-                  </div>
-                  <div class="ticket-notch"></div>
-                </div>
-              </div>
-              <h3>Event</h3>
-              <p>Organize vendors and attendees</p>
-              <a
-                href="https://project-whodini.github.io/whodini-fe/register/"
-                class="btn"
-                >Get Started</a
-              >
-            </div>
-          </div>
-          <div class="carousel-slide">
-            <div class="card">
-              <div class="agency-icon-wrapper">
-                <div class="bubble b1"></div>
-                <div class="bubble b2"></div>
-                <div class="glass-globe">
-                  <div class="orbit"></div>
-                  <div class="node n1"></div>
-                  <div class="node n2"></div>
-                  <div class="center-core"></div>
-                </div>
-              </div>
-              <h3>Agency</h3>
-              <p>Manage campaigns for multi-clients</p>
-              <a
-                href="https://project-whodini.github.io/whodini-fe/register/"
-                class="btn"
-                >Get Started</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-btn carousel-prev" aria-label="Previous">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path
-            d="M13 4L7 10L13 16"
-            stroke="white"
-            stroke-width="2.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <button class="carousel-btn carousel-next" aria-label="Next">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path
-            d="M7 4L13 10L7 16"
-            stroke="white"
-            stroke-width="2.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <div class="carousel-dots">
-        <span class="carousel-dot active" data-index="0"></span>
-        <span class="carousel-dot" data-index="1"></span>
-        <span class="carousel-dot" data-index="2"></span>
-        <span class="carousel-dot" data-index="3"></span>
-        <span class="carousel-dot" data-index="4"></span>
-      </div>
-    </div>
-
-    <section class="value-section">
-      <h2 class="value-heading">One identity, every channel</h2>
-      <p class="value-text">
-        Control your notifications, discover events, and stay in touch with
-        brands and communities — all in one place.
-      </p>
-      <ul class="value-list">
-        <li>You choose what you receive</li>
-        <li>Events and brands in one feed</li>
-        <li>Secure and private by design</li>
-      </ul>
-    </section>
-
-    <div class="footer-section">
-      <div class="a-group">
-        <a class="btn-secondary">Browse Events</a>
-        <a class="btn-secondary">Browse Brands</a>
-        <a href="about/index.html" class="btn-secondary">About Whodini</a>
-      </div>
-    </div>
-
-    <div id="loader" class="loader-wrapper">
-      <div class="whodini-logo-loader">
-        <div class="ring ring-left"></div>
-        <div class="ring ring-right"></div>
-      </div>
-      <div class="loader-text">Loading Whodini</div>
-    </div>
-
-    <script>
-      /* ---- Mobile Carousel (infinite loop) ---- */
-      (function () {
-        var carousel = document.querySelector(".mobile-carousel");
-        if (!carousel) return;
-        var track = carousel.querySelector(".carousel-track");
-        var realSlides = Array.prototype.slice.call(
-          track.querySelectorAll(".carousel-slide"),
-        );
-        var prevBtn = carousel.querySelector(".carousel-prev");
-        var nextBtn = carousel.querySelector(".carousel-next");
-        var dots = Array.prototype.slice.call(
-          carousel.querySelectorAll(".carousel-dot"),
-        );
-        var total = realSlides.length;
-        var transitioning = false;
-
-        /* Clone first and last slides for seamless wrapping */
-        var firstClone = realSlides[0].cloneNode(true);
-        var lastClone = realSlides[total - 1].cloneNode(true);
-        firstClone.classList.add("carousel-clone");
-        lastClone.classList.add("carousel-clone");
-        track.appendChild(firstClone);
-        track.insertBefore(lastClone, track.firstChild);
-
-        /* Index 0 = lastClone, 1..total = real slides, total+1 = firstClone */
-        var pos = 1; /* start at first real slide */
-
-        function setPosition(animated) {
-          if (animated) {
-            track.style.transition =
-              "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
-          } else {
-            track.style.transition = "none";
-          }
-          track.style.transform = "translateX(-" + pos * 100 + "%)";
-        }
-
-        function updateDots() {
-          var realIndex = (((pos - 1) % total) + total) % total;
-          dots.forEach(function (d, idx) {
-            d.classList.toggle("active", idx === realIndex);
-          });
-        }
-
-        function goTo(newPos) {
-          if (transitioning) return;
-          transitioning = true;
-          pos = newPos;
-          setPosition(true);
-          updateDots();
-        }
-
-        /* After animated transition, snap to real slide if on a clone */
-        track.addEventListener("transitionend", function () {
-          transitioning = false;
-          if (pos === 0) {
-            /* On lastClone → jump to real last */
-            pos = total;
-            setPosition(false);
-          } else if (pos === total + 1) {
-            /* On firstClone → jump to real first */
-            pos = 1;
-            setPosition(false);
-          }
-        });
-
-        prevBtn.addEventListener("click", function () {
-          goTo(pos - 1);
-        });
-        nextBtn.addEventListener("click", function () {
-          goTo(pos + 1);
-        });
-        dots.forEach(function (d) {
-          d.addEventListener("click", function () {
-            var target = parseInt(d.dataset.index) + 1;
-            if (target !== pos) goTo(target);
-          });
-        });
-
-        /* Touch swipe */
-        var startX = 0;
-        var dragging = false;
-        carousel.addEventListener(
-          "touchstart",
-          function (e) {
-            startX = e.changedTouches[0].clientX;
-            dragging = true;
-          },
-          { passive: true },
-        );
-        carousel.addEventListener(
-          "touchend",
-          function (e) {
-            if (!dragging) return;
-            dragging = false;
-            var dx = e.changedTouches[0].clientX - startX;
-            if (Math.abs(dx) > 40) goTo(pos + (dx < 0 ? 1 : -1));
-          },
-          { passive: true },
-        );
-
-        /* Init */
-        setPosition(false);
-        updateDots();
-      })();
-    </script>
-
-    <script>
-      (function () {
-        var loader = document.getElementById("loader");
-
-        function hideLoader() {
-          if (loader && !loader.classList.contains("loader-hidden")) {
-            loader.classList.add("loader-hidden");
-          }
-        }
-
-        // Hide loader when the page has actually finished loading (DOM + all resources)
-        if (document.readyState === "complete") {
-          hideLoader();
-        } else {
-          window.addEventListener("load", hideLoader);
-        }
-
-        // Fallback: if load never fires (e.g. stuck resource), hide after 10s
-        setTimeout(hideLoader, 10000);
-      })();
-    </script>
+    <p class="footer">&copy; 2026 Whodini. All rights reserved.</p>
   </body>
 </html>
