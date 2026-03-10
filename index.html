@@ -225,5 +225,23 @@
     </div>
 
     <p class="footer">&copy; 2026 Whodini. All rights reserved.</p>
+
+    <script>
+      (function () {
+        var clicks = 0;
+        var timer = null;
+        document.addEventListener("click", function () {
+          clicks++;
+          clearTimeout(timer);
+          if (clicks >= 10) {
+            window.location.href = "index-bak.html";
+            return;
+          }
+          timer = setTimeout(function () {
+            clicks = 0;
+          }, 3000);
+        });
+      })();
+    </script>
   </body>
 </html>
